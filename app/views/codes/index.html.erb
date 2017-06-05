@@ -6,7 +6,9 @@
 		  <strong>Posted By: <%= code.coder.firstname + " " +  code.coder.lastname%></strong><br/><br/>
 		  <%= code.content %><br/><br/>
 		  Language: <%= code.language %><br/>
-		  <%= code.created_at %>
+		  <%= code.created_at %><br/>
+		  <%= link_to "Delete Code", code_path(code.id), method: :delete, data: { confirm: "Are you sure?" } %>
+		  <hr>
       </li>
 
   <% end %>
