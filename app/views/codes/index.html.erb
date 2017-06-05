@@ -1,11 +1,12 @@
 <h1>Feed from Codes!</h1>
 
 <ul>
-  <% Code.all.each do |code| %>
+  <% @codes.each do |code| %>
   	<% coder = Coder.find(code.coder_id) %>
 	  <li>
-		  <strong>Posted By: <%= coder.firstname + " " +  coder.lastname%></strong><br/>
-		  <%= code.language %> | <%= code.content %><br/>
+		  <strong>Posted By: <%= coder.firstname + " " +  coder.lastname%></strong><br/><br/>
+		  <%= code.content %><br/>
+		  Language: <%= code.language %><br/>
 		  <%= code.created_at %>
       </li>
 
