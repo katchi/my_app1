@@ -22,5 +22,5 @@
 
 #Custom Ignore
 config/cable.yml
-config/databse.yml
+config/database.yml
 config/secrets.yml
