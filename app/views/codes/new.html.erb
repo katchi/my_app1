@@ -1,0 +1,8 @@
+<h1>Add New Code</h1>
+
+<%= form_for @code, url: {action: "create"} do |f| %>
+  <%= f.select :coder_id, Coder.all.map{ |coder| [coder.firstname, coder.id] } %>
+  <%= f.text_area :content, size: "60x12" %>
+  <%= f.text_field :language %>
+  <%= f.submit "Post" %>
+<% end %>
