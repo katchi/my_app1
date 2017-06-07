@@ -10,6 +10,8 @@
 		  Language: <%= code.language %><br/>
 		  <%= code.created_at %><br/>
 		  <%= link_to "Delete Code", code_path(code.id), method: :delete, data: { confirm: "Are you sure?" } %>
+		   | 
+		  <%= link_to "Edit Code", edit_code_path(code.id)  %>
 		  <hr>
       </li>
 

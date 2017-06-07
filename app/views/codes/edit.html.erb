@@ -1,0 +1,7 @@
+<h1>Edit</h1>
+
+<%= form_for @code, method: :put do |f| %>
+  <%= f.text_area :content, size: "60x12" %>
+  <%= f.text_field :language %>
+  <%= f.submit "Post" %>
+<% end %>
