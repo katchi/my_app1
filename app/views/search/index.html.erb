@@ -1,16 +1,15 @@
 <h1>Search Results: </h1>
 
 <ul>
-  <% @codes.each do |code| %>
+  <% @results.each do |result| %>
 	  <li>
-		  <%= code.content %><br/><br/>
+		  <%=
+		  if result.try(:content).present? 
+		  	result.content
+		  else
+		  	result.firstname
+		  end
+		  %>
       </li>
-
-  <% end %>
-  <% @coders.each do |coder| %>
-	  <li>
-		  <%= coder.firstname %><br/><br/>
-      </li>
-
   <% end %>
 </ul>
