@@ -24,7 +24,8 @@ class CodesController < ApplicationController
   end
 
   def update
-  	@code = Code.update(content: params[:code][:content], language: params[:code][:language])
+    @code = Code.find(params[:id])
+  	@code = @code.update(content: params[:code][:content], language: params[:code][:language])
   	redirect_to codes_path
   end
 
