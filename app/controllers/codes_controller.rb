@@ -16,7 +16,7 @@ class CodesController < ApplicationController
   end
 
   def create
-  	@code = Code.new(coder_id: params[:code][:coder_id], content: params[:code][:content], language: params[:code][:language])
+  	@code = Code.new(code_params)
   	@code.save
     redirect_to_index
   end
@@ -25,7 +25,7 @@ class CodesController < ApplicationController
   end
 
   def update
-  	@code = @code.update(content: params[:code][:content], language: params[:code][:language])
+  	@code = @code.update(code_params)
     redirect_to_index
   end
 
@@ -37,6 +37,10 @@ class CodesController < ApplicationController
 
   def redirect_to_index
     redirect_to codes_path
+  end
+
+  def code_params
+    params.require(:code).permit(:coder_id, :content, :language)
   end
 
 end
