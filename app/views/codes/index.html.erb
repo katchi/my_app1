@@ -2,6 +2,12 @@
 
 <%= link_to "Add Code", new_code_path %>
 
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <ul>
   <% @codes.each do |code| %>
 	  <li>

@@ -1,0 +1,16 @@
+<h1>Search Results: </h1>
+
+<ul>
+  <% @codes.each do |code| %>
+	  <li>
+		  <%= code.content %><br/><br/>
+      </li>
+
+  <% end %>
+  <% @coders.each do |coder| %>
+	  <li>
+		  <%= coder.firstname %><br/><br/>
+      </li>
+
+  <% end %>
+</ul>
