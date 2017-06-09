@@ -1,12 +1,8 @@
 class SearchController < ApplicationController 
 	def index
-		@codes = Code.where(where_condition("content"))
-		@coders = Coder.where(where_condition("firstname"))
+		@codes = Code.by_keyword("content", params[:q])
+		@coders = Coder.by_keyword("firstname", params[:q])
 		@results = @codes + @coders
-	end
-
-	def where_condition(attribute)
-		["#{attribute} ILIKE ?", "%#{params[:q]}%"]
 	end
 
 end	
