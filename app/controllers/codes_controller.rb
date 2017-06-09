@@ -8,7 +8,7 @@ class CodesController < ApplicationController
 
   def destroy
  	@code.destroy
- 	redirect_to codes_path
+  redirect_to_index
   end
 
   def new
@@ -18,7 +18,7 @@ class CodesController < ApplicationController
   def create
   	@code = Code.new(coder_id: params[:code][:coder_id], content: params[:code][:content], language: params[:code][:language])
   	@code.save
-  	redirect_to codes_path
+    redirect_to_index
   end
 
   def edit
@@ -26,13 +26,17 @@ class CodesController < ApplicationController
 
   def update
   	@code = @code.update(content: params[:code][:content], language: params[:code][:language])
-  	redirect_to codes_path
+    redirect_to_index
   end
 
   protected
 
   def set_code
     @code = Code.find(params[:id])
+  end
+
+  def redirect_to_index
+    redirect_to codes_path
   end
 
 end
