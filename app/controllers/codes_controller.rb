@@ -1,10 +1,12 @@
 class CodesController < ApplicationController
+
+  before_action :set_code, only: [:destroy, :edit, :update]
+
   def index
   	@codes = Code.all
   end
 
   def destroy
-  	@code = Code.find(params[:id])
  	@code.destroy
  	redirect_to codes_path
   end
@@ -20,13 +22,17 @@ class CodesController < ApplicationController
   end
 
   def edit
-  	@code = Code.find(params[:id])
   end
 
   def update
-    @code = Code.find(params[:id])
   	@code = @code.update(content: params[:code][:content], language: params[:code][:language])
   	redirect_to codes_path
+  end
+
+  protected
+
+  def set_code
+    @code = Code.find(params[:id])
   end
 
 end
