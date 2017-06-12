@@ -13,7 +13,7 @@
   	<div class="row-fluid">
   		<div class="span12">
 		  <h4>Posted By: <%= code.coder.firstname + " " +  code.coder.lastname%></h4>
-		  <%= code.created_at %>
+		  <%= time_ago_in_words(code.created_at) %> ago
 		  <p><%= code.content %></p>
 		  <p><%= code.description %></p>
 		  Language: <%= code.language %><br/>
