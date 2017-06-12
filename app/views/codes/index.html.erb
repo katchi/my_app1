@@ -8,18 +8,19 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<ul>
+<div class="feeds">
   <% @codes.each do |code| %>
-	  <li>
-		  <strong>Posted By: <%= code.coder.firstname + " " +  code.coder.lastname%></strong><br/><br/>
-		  <%= code.content %><br/><br/>
+  	<div class="row">
+  		<div class="span12">
+		  <h4>Posted By: <%= code.coder.firstname + " " +  code.coder.lastname%></h4>
+		  <%= code.created_at %>
+		  <p><%= code.content %></p>
 		  Language: <%= code.language %><br/>
-		  <%= code.created_at %><br/>
+		  
 		  <%= link_to "Delete Code", code_path(code.id), method: :delete, data: { confirm: "Are you sure?" } %>
 		   | 
 		  <%= link_to "Edit Code", edit_code_path(code.id)  %>
-		  <hr>
-      </li>
-
+		</div>
+	</div>
   <% end %>
-</ul>
+</div>

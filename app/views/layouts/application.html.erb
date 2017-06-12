@@ -9,6 +9,35 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-narrow">
+
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <h3 class="muted">Project Codebook</h3>
+      </div>
+
+      <hr>
+
+      <div class="jumbotron">
+        <h1>My super awesome Rails App!</h1>
+        <p class="lead">This is my first Ruby on Rails App, my pass to a new world. Now, let me try awesome stuffs out there and see where it gets me. You can check out my journey through GitHub. Try this and be awesome.</p>
+        <a class="btn btn-large btn-success" href="#">Sign up today</a>
+      </div>
+
+      <hr>
+      <div class="content">
+      	<%= yield %>
+      </div>
+      <hr>
+
+      <div class="footer">
+        <p>&copy; Katchi 2016</p>
+      </div>
+
+    </div>
   </body>
 </html>
