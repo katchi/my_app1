@@ -40,7 +40,7 @@ class CodesController < ApplicationController
   end
 
   def code_params
-    params.require(:code).permit(:coder_id, :content, :language)
+    params.require(:code).permit(:coder_id, :content, :language, :description)
   end
 
 end
