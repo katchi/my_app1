@@ -14,7 +14,7 @@
   		<div class="span12">
 		  <h4>Posted By: <%= code.coder.firstname + " " +  code.coder.lastname%></h4>
 		  <%= time_ago_in_words(code.created_at) %> ago
-		  <p><%= code.content %></p>
+		  <pre class="brush: ruby"><%= code.content %></pre>
 		  <p><%= code.description %></p>
 		  Language: <%= code.language %><br/>
 		  
@@ -25,3 +25,8 @@
 	</div>
   <% end %>
 </div>
+<script type="text/javascript">
+	$(function() {
+		SyntaxHighlighter.all();
+	})
+</script>

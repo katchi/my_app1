@@ -14,5 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require 'bootstrap/bootstrap'
+//= require syntax-highlighter-rails/shCore
+//= require syntax-highlighter-rails/shBrushRuby
+//= require syntax-highlighter-rails/shBrushColdFusion
+//= require syntax-highlighter-rails/shBrushJScript
+//= require syntax-highlighter-rails/shBrushPhp
+//= require syntax-highlighter-rails/shBrushAS3
 //= require_tree .
 

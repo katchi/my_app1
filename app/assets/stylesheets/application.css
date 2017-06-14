@@ -12,6 +12,8 @@
  *
  *= require bootstrap/bootstrap
  *= require bootstrap/bootstrap-responsive
+ *= require syntax-highlighter-rails/shCore
+ *= require syntax-highlighter-rails/shThemeDefault
  *= require_tree .
  *= require_self
  */
